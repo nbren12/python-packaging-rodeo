@@ -11,12 +11,8 @@ jobs:
     steps:
     - name: Install dependencies
       run: |
-        sudo apt-get install  -y python3-cartopy python3-tensorflow
+        sudo apt-get install -y python3-cartopy
     - name: Try to import cartopy
       run: |
         python3 -c 'import cartopy'
-    - name: Try to import tensorflow
-      run: |
-        python3 -c 'import tensorflow'
-
       
