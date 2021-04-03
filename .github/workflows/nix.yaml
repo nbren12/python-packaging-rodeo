@@ -17,7 +17,8 @@ jobs:
       - run: which python
       - name: Install dependencies
         run: |
-          nix-env -iA nixpkgs.python3Packages.cartopy -iA nixpkgs.python3Packages.tensorflow
+          nix-shell --run "true"
+        timeout-minutes: 2
       - name: Try to import cartopy
         run: |
           python -c 'import cartopy'
