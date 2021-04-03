@@ -1,4 +1,6 @@
-The two most difficult python packages to install in the known universe are tensorflow and cartopy. Many package managers are unable to install these packages.
+The two most difficult python packages to install in the known universe are
+tensorflow and cartopy. Many package managers are unable to install these
+packages. Even fewer can install both AT THE SAME TIME.
 
 The goal of this project is to compare on Mac and linux
 1. Nix
