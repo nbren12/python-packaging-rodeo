@@ -17,7 +17,7 @@ jobs:
       - name: Install dependencies
         run: |
           nix-shell machnix.nix --run "true"
-        timeout-minutes: 2
+        timeout-minutes: 10
       - name: Try to import cartopy
         run: |
           nix-shell machnix.nix --run "python -c 'import cartopy'"
