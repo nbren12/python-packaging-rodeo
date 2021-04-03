@@ -17,13 +17,11 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install cartopy tensorflow
+        pip install tensorflow docrep
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Try to import cartopy
-      run: |
-        python -c 'import cartopy'
-    - name: Try to import tensorflow
+    - name: Import packages
       run: |
         python -c 'import tensorflow'
+        python -c 'import docrep'
 
       
