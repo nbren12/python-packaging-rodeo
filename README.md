@@ -16,7 +16,7 @@ The goal of this project is to compare on Mac (currently not implemented) and li
 2. [pip](https://pip.pypa.io/en/stable/)
 3. apt-get (on an ubuntu system)
 4. [Nix](https://nixos.org/)
-   1. nixpkgs (default setup)
+   1. nixpkgs
    1. [poetry2nix](https://github.com/nix-community/poetry2nix)
    1. [mach-nix](https://github.com/DavHau/mach-nix)
 
