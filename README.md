@@ -40,4 +40,4 @@ The more packages a tool can install the better. Passing CI tests is good.
 Please contribute a new packaging tool or modify an existing tool's configuration to improve its results. That said, we will need to discuss what a "tools configuration" consists of. Some rough thoughts are:
 - conda can install pip dependencies, but to my knowledge it does not ensure that pip versions installed are consistent with the resolved conda versions, and cannot be frozen very easily
 - Nix-based tools have more leeway in this regard since its "configuration" is the nix programming language
-- Manually packaging (e.g. nix derivation or conda recipe) for the <random pip package> is not allowed.
+- Manually packaging the <random pip package> (e.g. writing an explicit nix derivation, conda recipe, etc) is not allowed. 
