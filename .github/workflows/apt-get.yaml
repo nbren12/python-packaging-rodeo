@@ -1,0 +1,22 @@
+name: apt-get
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ 3.8 ]
+    steps:
+    - name: Install dependencies
+      run: |
+        apt-get install  -y python3-cartopy python3-tensorflow
+    - name: Try to import cartopy
+      run: |
+        python3 -c 'import cartopy'
+    - name: Try to import tensorflow
+      run: |
+        python3 -c 'import tensorflow'
+
+      
