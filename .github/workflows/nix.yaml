@@ -1,0 +1,26 @@
+
+name: Nix (nixpkgs)
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ 3.8 ]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cachix/install-nix-action@v13
+        with:
+          nix_path: nixpkgs=channel:release-20.09
+      - run: which python
+      - name: Install dependencies
+        run: |
+          nix-env -iA nixpkgs.python3Packages.cartopy -iA nixpkgs.python3Packages.tensorflow
+      - name: Try to import cartopy
+        run: |
+          python -c 'import cartopy'
+      - name: Try to import tensorflow
+        run: |
+          python -c 'import tensorflow'
