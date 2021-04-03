@@ -1,0 +1,26 @@
+
+name: Nix (machnix)
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ 3.8 ]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cachix/install-nix-action@v13
+        with:
+          nix_path: nixpkgs=channel:nixos-20.09
+      - name: Install dependencies
+        run: |
+          nix-shell machnix.nix --run "true"
+        timeout-minutes: 2
+      - name: Try to import cartopy
+        run: |
+          nix-shell machnix.nix --run "python -c 'import cartopy'"
+      - name: Try to import tensorflow
+        run: |
+          nix-shell machnix.nix --run "python -c 'import tensorflow'"
