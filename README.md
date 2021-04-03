@@ -40,7 +40,7 @@ This project tests point (1)  using continuous integration (CI).
 
 Eventually is to compare these on Mac and Linux, but only Linux is currently implemented.
 
-# Results
+## Results
 
 The more packages a tool can install the better. Passing CI tests is good.
 
@@ -55,7 +55,7 @@ The more packages a tool can install the better. Passing CI tests is good.
 
 [^1]: Readers should assume that the tool CANNOT install more than this
 
-# Contributing
+## Contributing
 
 Please contribute a new packaging tool or modify an existing tool's configuration to improve its results. That said, we will need to discuss what a "tools configuration" consists of. Some rough thoughts are:
 - conda can install pip dependencies, but to my knowledge it does not ensure that pip versions installed are consistent with the resolved conda versions, and cannot be frozen very easily
