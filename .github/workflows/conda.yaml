@@ -1,0 +1,25 @@
+
+name: Python package
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ 3.8 ]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: s-weigand/setup-conda@v1
+      - run: conda --version
+      - run: which python
+    - name: Install dependencies
+      run: |
+        conda install cartopy tensorflow
+    - name: Try to import cartopy
+      run: |
+        python -c 'import cartopy'
+    - name: Try to import tensorflow
+      run: |
+        python -c 'import tensorflow'
