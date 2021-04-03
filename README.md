@@ -12,16 +12,18 @@ The Rodeo sees if there is any ONE tool that can manage these three dependencies
 This project tests point 1 quantatively using continuous integration (CI) and
 assess #2 qualitatively.
 
-The goal of this project is to compare on Mac and linux
-1. anaconda
-2. pip
-3. apt-get
-4. Nix
-   1. nixpkgs
-   1. poetry2nix
-   1. mach-nix
+The goal of this project is to compare on Mac (currently not implemented) and linux
+1. [anaconda](https://docs.conda.io/en/latest/)
+2. [pip](https://pip.pypa.io/en/stable/)
+3. apt-get (on an ubuntu system)
+4. [Nix](https://nixos.org/)
+   1. nixpkgs (default setup)
+   1. [poetry2nix](https://github.com/nix-community/poetry2nix)
+   1. [mach-nix](https://github.com/DavHau/mach-nix)
 
 # Results
+
+The more packages a tool can install the better. Passing CI tests is good.
 
 | Package Manager | CI Status   |  Packages Attempted to install [^1]  | 
 |--------------------------|----------------|-------------------------------------------|
@@ -33,3 +35,11 @@ The goal of this project is to compare on Mac and linux
  | apt-get  | [![Nix (machnix)](https://github.com/nbren12/python-packaging-rodeo/actions/workflows/mach-nix.yaml/badge.svg)](https://github.com/nbren12/python-packaging-rodeo/actions/workflows/mach-nix.yaml) | cartopy |
 
 [^1]: Readers should assume that the tool CANNOT install more than this
+
+# Contributing
+
+Please add contributions that modify a tools configuration to improve its results. That said, there will have to be some discussion about what a "tools configuration" consists of. Some rough thoughts are:
+- conda can install pip dependencies, but to my knowledge it does not ensure that pip versions installed are consistent with the resolved conda versions, and cannot be frozen very easily
+- using two package managers e.g. apt-get followed by pip is not "one tool"
+- Nix-based tools have more leeway in this regard since its "configuration" is the nix programming language
+- Manually packaging (e.g. nix derivation or conda recipe) for the <random pip package> is not allowed.
