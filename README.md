@@ -11,15 +11,16 @@ The following recipe is kryptonite for most python package managers
 - cartopy - has many system dependencies
 -  `<random pypi package>`. This can be easily installed by `pip install`, but isn't in most distributions. The tool docrep is a good example.
 
-Typically, one will need to use several package managers to handle this situation. The Rodeo sees if there is any ONE tool that can manage these three dependencies. To manage a dependency a tool must 
+Typically, one will need to use several package managers to handle this situation. This Rodeo is designed to find ONE tool that can manage these three dependencies in an elegant way. To manage a dependency a tool must 
 1. be able to install a working  environment 
    1. in a reasonable amount of time
 2. be able to lock this installed environment so that it can reproduced at a future date.
 
-This project tests point 1 quantatively using continuous integration (CI) and
-assess #2 qualitatively.
+This project tests point 1 quantatively using continuous integration (CI).
 
-The goal of this project is to compare on Mac (currently not implemented) and linux
+
+## Package Managers Compared
+
 1. [anaconda](https://docs.conda.io/en/latest/)
 2. [pip](https://pip.pypa.io/en/stable/)
 3. apt-get (on an ubuntu system)
@@ -27,6 +28,8 @@ The goal of this project is to compare on Mac (currently not implemented) and li
    1. nixpkgs
    1. [poetry2nix](https://github.com/nix-community/poetry2nix)
    1. [mach-nix](https://github.com/DavHau/mach-nix)
+
+Eventually is to compare these on Mac and Linux, but only Linux is currently implemented.
 
 # Results
 
