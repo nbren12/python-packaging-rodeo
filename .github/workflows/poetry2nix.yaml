@@ -1,0 +1,23 @@
+
+name: Nix (poetry2nix)
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ 3.8 ]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cachix/install-nix-action@v13
+        with:
+          nix_path: nixpkgs=channel:nixos-20.09
+      - name: Install dependencies
+        run: |
+          nix-shell poetry.nix --run "true"
+        timeout-minutes: 10
+      - name: Import modules
+        run: |
+          nix-shell poetry.nix --run "python -c 'import cartopy; import tensorflow; import docrep'"
