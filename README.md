@@ -13,7 +13,7 @@ Few tools can elegantly manage the following packages:
 
 This situation usually requires using multiple package managers like this:
 
-    apt-get install cartopy
+    apt-get install python3-cartopy python3-pip
     pip install tensorflow <random pypi package>
     
 However, using multiple package managers leads to ugly/non-portable installation
