@@ -14,12 +14,12 @@ jobs:
       - uses: s-weigand/setup-conda@v1
       - run: conda --version
       - run: which python
-    - name: Install dependencies
-      run: |
-        conda install cartopy tensorflow
-    - name: Try to import cartopy
-      run: |
-        python -c 'import cartopy'
-    - name: Try to import tensorflow
-      run: |
-        python -c 'import tensorflow'
+      - name: Install dependencies
+        run: |
+          conda install cartopy tensorflow
+      - name: Try to import cartopy
+        run: |
+          python -c 'import cartopy'
+      - name: Try to import tensorflow
+        run: |
+          python -c 'import tensorflow'
