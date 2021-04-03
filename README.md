@@ -38,7 +38,7 @@ This project tests point (1)  using continuous integration (CI).
    1. [poetry2nix](https://github.com/nix-community/poetry2nix)
    1. [mach-nix](https://github.com/DavHau/mach-nix)
 
-Eventually is to compare these on Mac and Linux, but only Linux is currently implemented.
+The goal is to compare these on Mac and Linux, but only Linux is currently implemented.
 
 ## Results
 
