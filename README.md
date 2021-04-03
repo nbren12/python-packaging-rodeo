@@ -6,18 +6,27 @@ Glenn Stampalia, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wi
 
 ## Introduction
 
-The following recipe is kryptonite for most python package managers
+Few tools can elegantly manage the following packages:
 - tensorflow - is bloated and pins specific versions of many of  its dependencies
 - cartopy - has many system dependencies
 -  `<random pypi package>`. This can be easily installed by `pip install`, but isn't in most distributions. The tool docrep is a good example.
 
-Typically, one will need to use several package managers to handle this situation. This Rodeo is designed to find ONE tool that can manage these three dependencies in an elegant way. To manage a dependency a tool must 
+This situation usually requires using multiple package managers like this:
+
+    apt-get install cartopy
+    pip install tensorflow <random pypi package>
+    
+However, using multiple package managers leads to ugly/non-portable installation
+scripts that are hard to maintain and not very composable. Moreover, it has hard
+to lock dependencies, manage license, etc, across multiple tools.
+
+This Rodeo is designed to find ONE tool that can manage these three dependencies
+in an elegant way. To manage a dependency a tool must
 1. be able to install a working  environment 
    1. in a reasonable amount of time
 2. be able to lock this installed environment so that it can reproduced at a future date.
 
-This project tests point 1 quantatively using continuous integration (CI).
-
+This project tests point (1)  using continuous integration (CI).
 
 ## Package Managers Compared
 
