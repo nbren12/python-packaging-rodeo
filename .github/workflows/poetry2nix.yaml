@@ -20,4 +20,4 @@ jobs:
         timeout-minutes: 10
       - name: Import modules
         run: |
-          nix-shell poetry.nix --run "python -c 'import cartopy; import tensorflow; import docrep'"
+          nix-shell poetry.nix --run "python -c 'import cartopy; import tensorflow; import xgcm'"

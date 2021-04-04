@@ -17,11 +17,11 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install tensorflow docrep
+        pip install tensorflow xgcm
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Import packages
       run: |
         python -c 'import tensorflow'
-        python -c 'import docrep'
+        python -c 'import xgcm'
 
       

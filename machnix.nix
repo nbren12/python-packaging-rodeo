@@ -8,6 +8,6 @@ mach-nix.mkPython {
   requirements = ''
     cartopy
     tensorflow>=2
-    docrep
+    xgcm
   '';
 }

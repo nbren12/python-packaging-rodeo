@@ -9,7 +9,7 @@ Glenn Stampalia, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wi
 Few tools can elegantly manage the following packages:
 - tensorflow - is bloated and pins specific versions of many of  its dependencies
 - cartopy - has many system dependencies
--  `<random pypi package>`. This can be easily installed by `pip install`, but isn't in most distributions. The tool docrep is a good example.
+-  `<random pypi package>`. This can be easily installed by `pip install`, but isn't in most distributions. The tool xgcm is a good example.
 
 This situation usually requires using multiple package managers like this:
 
@@ -46,11 +46,11 @@ The more packages a tool can install the better. Passing CI tests is good.
 
 | Package Manager | CI Status   |  Packages Attempted to install [^1]  | 
 |--------------------------|----------------|-------------------------------------------|
-| pip | [![Python package](https://github.com/nbren12/python-packaging-rodeo/actions/workflows/pip.yaml/badge.svg?branch=master)](https://github.com/nbren12/python-packaging-rodeo/actions/workflows/pip.yaml) | tensorflow, docrep  |
+| pip | [![Python package](https://github.com/nbren12/python-packaging-rodeo/actions/workflows/pip.yaml/badge.svg?branch=master)](https://github.com/nbren12/python-packaging-rodeo/actions/workflows/pip.yaml) | tensorflow, xgcm  |
 | conda | [![Conda](https://github.com/nbren12/python-packaging-rodeo/actions/workflows/conda.yaml/badge.svg)](https://github.com/nbren12/python-packaging-rodeo/actions/workflows/conda.yaml) | cartopy, tensorflow  |
 | nixpkgs |[![Nix (nixpkgs)](https://github.com/nbren12/python-packaging-rodeo/actions/workflows/nix.yaml/badge.svg)](https://github.com/nbren12/python-packaging-rodeo/actions/workflows/nix.yaml)| cartopy, tensorflow  |
-| nixpkgs (machnix) | [![Nix (machnix)](https://github.com/nbren12/python-packaging-rodeo/actions/workflows/mach-nix.yaml/badge.svg)](https://github.com/nbren12/python-packaging-rodeo/actions/workflows/mach-nix.yaml) | cartopy, tensorflow, docrep |
-| nixpkgs (poetry2nix) | [![Nix (poetry2nix)](https://github.com/nbren12/python-packaging-rodeo/actions/workflows/poetry2nix.yaml/badge.svg)](https://github.com/nbren12/python-packaging-rodeo/actions/workflows/poetry2nix.yaml) | cartopy, tensorflow, docrep |
+| nixpkgs (machnix) | [![Nix (machnix)](https://github.com/nbren12/python-packaging-rodeo/actions/workflows/mach-nix.yaml/badge.svg)](https://github.com/nbren12/python-packaging-rodeo/actions/workflows/mach-nix.yaml) | cartopy, tensorflow, xgcm |
+| nixpkgs (poetry2nix) | [![Nix (poetry2nix)](https://github.com/nbren12/python-packaging-rodeo/actions/workflows/poetry2nix.yaml/badge.svg)](https://github.com/nbren12/python-packaging-rodeo/actions/workflows/poetry2nix.yaml) | cartopy, tensorflow, xgcm |
  | apt-get  | [![Nix (machnix)](https://github.com/nbren12/python-packaging-rodeo/actions/workflows/apt-get.yaml/badge.svg)](https://github.com/nbren12/python-packaging-rodeo/actions/workflows/apt-get.yaml) | cartopy |
 
 [^1]: Readers should assume that the tool CANNOT install more than this
