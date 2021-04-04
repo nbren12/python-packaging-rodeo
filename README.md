@@ -17,7 +17,7 @@ This situation usually requires using multiple package managers like this:
     pip install tensorflow <random pypi package>
     
 However, using multiple package managers leads to ugly/non-portable installation
-scripts that are hard to maintain and not very composable. Moreover, it has hard
+scripts that are hard to maintain and not very composable. Moreover, it is hard
 to lock dependencies, manage license, etc, across multiple tools.
 
 This Rodeo is designed to find ONE tool that can manage these three dependencies
