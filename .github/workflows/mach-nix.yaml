@@ -16,11 +16,13 @@ jobs:
           nix_path: nixpkgs=channel:nixos-20.09
       - name: Install dependencies
         run: |
-          nix-shell machnix.nix --run "true"
+          cd nix/mach-nix
+          nix-shell --run "true"
         timeout-minutes: 10
       - name: Try to import cartopy
         run: |
-          nix-shell machnix.nix --run "python -c 'import cartopy'"
+          cd nix/mach-nix
+          nix-shell --run "python -c 'import cartopy'"
       - name: Try to import tensorflow
         run: |
-          nix-shell machnix.nix --run "python -c 'import tensorflow'"
+          nix-shell --run "python -c 'import tensorflow'"

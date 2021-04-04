@@ -16,8 +16,10 @@ jobs:
           nix_path: nixpkgs=channel:nixos-20.09
       - name: Install dependencies
         run: |
-          nix-shell poetry.nix --run "true"
+          cd nix/poetry2nix
+          nix-shell --run "true"
         timeout-minutes: 10
       - name: Import modules
         run: |
-          nix-shell poetry.nix --run "python -c 'import cartopy; import tensorflow; import xgcm'"
+          cd nix/poetry2nix
+          nix-shell  --run "python -c 'import cartopy; import tensorflow; import xgcm'"
