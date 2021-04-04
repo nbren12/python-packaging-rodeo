@@ -9,7 +9,7 @@ license = "MIT"
 python = "^3.7"
 Cartopy = "^0.18.0"
 tensorflow = "^2.4.1"
-docrep = "^0.3.2"
+xgcm = "^0.5.1"
 
 [tool.poetry.dev-dependencies]
 
