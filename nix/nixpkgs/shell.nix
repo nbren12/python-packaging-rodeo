@@ -37,7 +37,7 @@ let
     doInstallCheck = false;
     meta.broken = false;
   }));
-  python = python3.withPackages (ps: [ cartopy_unchecked ps.tensorflow_2 xgcm ]));
+  python = python3.withPackages (ps: [ cartopy_unchecked ps.tensorflow_2 xgcm ]);
 in
 mkShell {
   buildInputs = [ python ];
