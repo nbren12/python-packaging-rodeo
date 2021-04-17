@@ -30,14 +30,7 @@ let
     # doesn't find pytest, not sure why, disabling tests for now.
     doCheck = false;
   };
-  cartopy_unchecked = (python3Packages.cartopy.overrideAttrs (old: {
-    # cartopy seems to be broken on nixos-unstable, but perhaps we're not
-    # using any of the broken bits and can ignore the problem?
-    # https://github.com/NixOS/nixpkgs/issues/118449
-    doInstallCheck = false;
-    meta.broken = false;
-  }));
-  python = python3.withPackages (ps: [ cartopy_unchecked ps.tensorflow_2 xgcm ]);
+  python = python3.withPackages (ps: [ ps.cartopy ps.tensorflow_2 xgcm ]);
 in
 mkShell {
   buildInputs = [ python ];
